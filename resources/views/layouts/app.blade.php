@@ -35,6 +35,7 @@
                     <ul class="navbar-nav mr-auto">
                         <a class="nav-link" href="{{ url('/home') }}">{{ __('Home') }}</a>
                         <a class="nav-link" href="{{ action('CursosController@index') }}">Cursos</a>
+                        <a class="nav-link" href="{{ action('AlunosController@index') }}">Alunos</a>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
