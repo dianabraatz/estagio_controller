@@ -5,7 +5,7 @@
     <div class="py-4">
         <h1>{{ __('Create :0', ['Curso']) }}</h1>
     </div>
-    <form action="/cursos" method="POST">
+    <form action="{{ action('CursosController@store') }}" method="POST">
         @csrf
 
         <div class="form-group">

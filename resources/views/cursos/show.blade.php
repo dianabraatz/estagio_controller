@@ -23,6 +23,8 @@
         {{ __('Updated at') }}: {{ $curso->updated_at }}
     </p>
 
+    <hr />
+
     <p>
         <a href="{{ action('CursosController@index') }}">{{ __('Back to index') }}</a> |
 
