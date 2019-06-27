@@ -5,8 +5,18 @@ namespace App\Http\Controllers;
 use App\Curso;
 use Illuminate\Http\Request;
 
-class CursosController extends Controller
+class CursoController extends Controller
 {
+    /**
+     * Create a new controller instance
+     * 
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -40,7 +50,7 @@ class CursosController extends Controller
         $curso = new Curso($request->toArray());
         $curso->save();
 
-        return redirect(action('CursosController@index'));
+        return redirect(action('CursoController@index'));
     }
 
     /**
@@ -77,7 +87,7 @@ class CursosController extends Controller
         $curso->fill($request->toArray());
         $curso->save();
 
-        return redirect(action('CursosController@index'));
+        return redirect(action('CursoController@index'));
     }
 
     /**
@@ -90,6 +100,6 @@ class CursosController extends Controller
     {
         $curso->delete();
 
-        return redirect(action('CursosController@index'));
+        return redirect(action('CursoController@index'));
     }
 }

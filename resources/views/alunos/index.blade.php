@@ -4,16 +4,16 @@
 <div class="container">
     <div class="py-4">
         <h1>Alunos</h1>
-        <a href="{{ action('AlunosController@create') }}">{{ __('Create :0', ['Aluno']) }}</a>
+        <a href="{{ action('AlunoController@create') }}">{{ __('Create :0', ['Aluno']) }}</a>
     </div>
     <table id="table" class="table">
         <thead>
             <tr>
-                <td>ID</td>
-                <td>Nome</td>
-                <td>Matrícula</td>
-                <td>Curso</td>
-                <td>{{ __('Actions') }}</td>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Matrícula</th>
+                <th>Curso</th>
+                <th>{{ __('Actions') }}</th>
             </tr>
         </thead>
         <tbody>
@@ -23,16 +23,16 @@
                 <td>{{ $aluno->nome }}</td>
                 <td>{{ $aluno->matricula }}</td>
                 <td>
-                    <a href="{{ action('CursosController@show', ['id' => $aluno->curso->id]) }}">
+                    <a href="{{ action('CursoController@show', ['id' => $aluno->curso->id]) }}">
                         {{ $aluno->curso->nome }}
                     </a>
                 </td>
                 <td>
-                    <a href="{{ action('AlunosController@show',    ['id' => $aluno->id]) }}">{{ __('View') }}</a> |
+                    <a href="{{ action('AlunoController@show',    ['id' => $aluno->id]) }}">{{ __('View') }}</a> |
 
-                    <a href="{{ action('AlunosController@edit',    ['id' => $aluno->id]) }}">{{ __('Edit') }}</a> |
+                    <a href="{{ action('AlunoController@edit',    ['id' => $aluno->id]) }}">{{ __('Edit') }}</a> |
 
-                    <a href="{{ action('AlunosController@destroy', ['id' => $aluno->id]) }}"
+                    <a href="{{ action('AlunoController@destroy', ['id' => $aluno->id]) }}"
                        data-deleteform="deleteForm{{ $aluno->id }}"
                        data-toggle="modal"
                        data-target="#modal"
@@ -42,7 +42,7 @@
 
                     @component('components.deleteform', [
                         'id' => 'deleteForm'.$aluno->id,
-                        'action' => action('AlunosController@destroy', ['id' => $aluno->id])
+                        'action' => action('AlunoController@destroy', ['id' => $aluno->id])
                     ])
                     <h1 class="text-danger">Something went wrong</h1>
                     @endcomponent

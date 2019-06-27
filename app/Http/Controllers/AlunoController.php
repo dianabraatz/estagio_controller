@@ -6,8 +6,18 @@ use App\Aluno;
 use Illuminate\Http\Request;
 use App\Curso;
 
-class AlunosController extends Controller
+class AlunoController extends Controller
 {
+    /**
+     * Create a new controller instance
+     * 
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -43,7 +53,7 @@ class AlunosController extends Controller
         $aluno = new Aluno($request->toArray());
         $aluno->save();
 
-        return redirect(action('AlunosController@index'));
+        return redirect(action('AlunoController@index'));
     }
 
     /**
@@ -82,7 +92,7 @@ class AlunosController extends Controller
         $aluno->fill($request->toArray());
         $aluno->save();
 
-        return redirect(action('AlunosController@index'));
+        return redirect(action('AlunoController@index'));
     }
 
     /**
@@ -95,6 +105,6 @@ class AlunosController extends Controller
     {
         $aluno->delete();
 
-        return redirect(action('AlunosController@index'));
+        return redirect(action('AlunoController@index'));
     }
 }

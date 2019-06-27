@@ -4,14 +4,14 @@
 <div class="container">
     <div class="py-4">
         <h1>Cursos</h1>
-        <a href="{{ action('CursosController@create') }}">{{ __('Create :0', ['Curso']) }}</a>
+        <a href="{{ action('CursoController@create') }}">{{ __('Create :0', ['Curso']) }}</a>
     </div>
     <table id="table" class="table">
         <thead>
             <tr>
-                <td>ID</td>
-                <td>Nome</td>
-                <td>{{ __('Actions') }}</td>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>{{ __('Actions') }}</th>
             </tr>
         </thead>
         <tbody>
@@ -20,11 +20,11 @@
                 <td>{{ $curso->id }}</td>
                 <td>{{ $curso->nome }}</td>
                 <td>
-                    <a href="{{ action('CursosController@show',    ['id' => $curso->id]) }}">{{ __('View') }}</a> |
+                    <a href="{{ action('CursoController@show',    ['id' => $curso->id]) }}">{{ __('View') }}</a> |
 
-                    <a href="{{ action('CursosController@edit',    ['id' => $curso->id]) }}">{{ __('Edit') }}</a> |
+                    <a href="{{ action('CursoController@edit',    ['id' => $curso->id]) }}">{{ __('Edit') }}</a> |
 
-                    <a href="{{ action('CursosController@destroy', ['id' => $curso->id]) }}"
+                    <a href="{{ action('CursoController@destroy', ['id' => $curso->id]) }}"
                        data-deleteform="deleteForm{{ $curso->id }}"
                        data-toggle="modal"
                        data-target="#modal"
@@ -34,7 +34,7 @@
 
                     @component('components.deleteform', [
                         'id' => 'deleteForm'.$curso->id,
-                        'action' => action('CursosController@destroy', ['id' => $curso->id])
+                        'action' => action('CursoController@destroy', ['id' => $curso->id])
                     ])
                     <h1 class="text-danger">Something went wrong</h1>
                     @endcomponent

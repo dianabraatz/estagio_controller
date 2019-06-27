@@ -5,7 +5,7 @@
     <div class="py-4">
         <h1>{{ __('Edit :0', ['Aluno']) }}</h1>
     </div>
-    <form action="{{ action('AlunosController@update', ['id' => $aluno->id]) }}" method="POST">
+    <form action="{{ action('AlunoController@update', ['id' => $aluno->id]) }}" method="POST">
         @csrf
         @method('PATCH')
 

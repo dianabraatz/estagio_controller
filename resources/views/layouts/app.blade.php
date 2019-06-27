@@ -31,12 +31,14 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    @auth
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <a class="nav-link" href="{{ url('/home') }}">{{ __('Home') }}</a>
-                        <a class="nav-link" href="{{ action('CursosController@index') }}">Cursos</a>
-                        <a class="nav-link" href="{{ action('AlunosController@index') }}">Alunos</a>
+                        <a class="nav-link" href="{{ action('CursoController@index') }}">Cursos</a>
+                        <a class="nav-link" href="{{ action('AlunoController@index') }}">Alunos</a>
                     </ul>
+                    @endauth
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">

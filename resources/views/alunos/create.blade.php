@@ -6,7 +6,7 @@
         <h1>{{ __('Create :0', ['Aluno']) }}</h1>
     </div>
 
-    <form action="{{ action('AlunosController@store') }}" method="POST">
+    <form action="{{ action('AlunoController@store') }}" method="POST">
         @csrf
 
         <div class="form-group">

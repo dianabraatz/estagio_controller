@@ -26,11 +26,11 @@
     <hr />
 
     <p>
-        <a href="{{ action('CursosController@index') }}">{{ __('Back to index') }}</a> |
+        <a href="{{ action('CursoController@index') }}">{{ __('Back to index') }}</a> |
 
-        <a href="{{ action('CursosController@edit', ['id' => $curso->id]) }}">{{ __('Edit') }}</a> |
+        <a href="{{ action('CursoController@edit', ['id' => $curso->id]) }}">{{ __('Edit') }}</a> |
 
-        <a href="{{ action('CursosController@destroy', ['id' => $curso->id]) }}"
+        <a href="{{ action('CursoController@destroy', ['id' => $curso->id]) }}"
            id="deleteLink"
            data-toggle="modal"
            data-target="#modal"
@@ -41,7 +41,7 @@
 
     @component('components.deleteform', [
         'id' => 'deleteForm',
-        'action' => action('CursosController@destroy', ['id' => $curso->id])
+        'action' => action('CursoController@destroy', ['id' => $curso->id])
     ])
     <h1 class="text-danger">Something went wrong</h1>
     @endcomponent
