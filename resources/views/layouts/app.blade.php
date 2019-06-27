@@ -37,6 +37,7 @@
                         <a class="nav-link" href="{{ url('/home') }}">{{ __('Home') }}</a>
                         <a class="nav-link" href="{{ action('CursoController@index') }}">Cursos</a>
                         <a class="nav-link" href="{{ action('AlunoController@index') }}">Alunos</a>
+                        <a class="nav-link" href="{{ action('EmpresaController@index') }}">Empresas</a>
                     </ul>
                     @endauth
 
