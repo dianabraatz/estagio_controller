@@ -28,5 +28,11 @@
             <button type="submit" class="btn btn-primary">{{ __('Save') }}</button>
         </div>
     </form>
+
+    <hr>
+
+    <p>
+        <a href="{{ action('EmpresaController@index') }}">{{ __('Back to index') }}</a>
+    </p>
 </div>
 @endsection
