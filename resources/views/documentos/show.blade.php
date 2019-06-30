@@ -27,6 +27,19 @@
         {{ __('Updated at') }}: {{ $documento->updated_at }}
     </p>
 
+    <p>
+        Cursos:
+        <ul class="list-group">
+            @foreach($documento->cursos as $curso)
+            <li class="list-group-item">
+                <a href="{{ action('CursoController@show', ['id' => $curso->id]) }}">
+                    {{ $curso->nome }}
+                </a>
+            </li>
+            @endforeach
+        </ul>
+    </p>
+
     <hr />
 
     <p>

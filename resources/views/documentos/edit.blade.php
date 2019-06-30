@@ -20,6 +20,23 @@
         </div>
 
         <div class="form-group">
+            <label for="selectCursos">Cursos</label>
+            <select multiple
+                    id="selectCursos"
+                    type="text"
+                    name="cursos[]"
+                    class="form-control">
+                @foreach($cursos as $curso)
+                @php
+                $selected = $documento->cursos->contains($curso) ? 'selected' : '';
+                @endphp
+
+                <option value="{{ $curso->id }}" {{ $selected }}>{{ $curso->nome }}</option>
+                @endforeach
+            </select>
+        </div>
+
+        <div class="form-group">
             <button type="submit" class="btn btn-primary">{{ __('Save') }}</button>
         </div>
     </form>

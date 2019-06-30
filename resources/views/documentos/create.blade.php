@@ -14,8 +14,21 @@
         </div>
 
         <div class="form-group">
-            <label for="inputDescricao">Descricao</label>
+            <label for="inputDescricao">Descrição</label>
             <textarea id="inputDescricao" type="text" name="descricao" class="form-control"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="selectCursos">Cursos</label>
+            <select multiple
+                    id="selectCursos"
+                    type="text"
+                    name="cursos[]"
+                    class="form-control">
+                @foreach($cursos as $curso)
+                <option value="{{ $curso->id }}">{{ $curso->nome }} </option>
+                @endforeach
+            </select>
         </div>
 
         <div class="form-group">

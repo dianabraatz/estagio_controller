@@ -14,6 +14,18 @@
         </div>
 
         <div class="form-group">
+            <label for="selectDocumentos">Documentos</label>
+            <select multiple
+                    name="documentos[]"
+                    id="selectDocumentos"
+                    class="form-control">
+                @foreach($documentos as $documento)
+                <option value="{{ $documento->id }}">{{ $documento->nome }}</option>
+                @endforeach
+            </select>
+        </div>
+
+        <div class="form-group">
             <button type="submit" class="btn btn-primary">{{ __('Create') }}</button>
         </div>
     </form>

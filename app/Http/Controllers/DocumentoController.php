@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Documento;
 use Illuminate\Http\Request;
+use App\Curso;
 
 class DocumentoController extends Controller
 {
@@ -26,7 +27,9 @@ class DocumentoController extends Controller
      */
     public function create()
     {
-        return view('documentos.create');
+        $cursos = Curso::all();
+
+        return view('documentos.create', compact('cursos'));
     }
 
     /**
@@ -37,8 +40,9 @@ class DocumentoController extends Controller
      */
     public function store(Request $request)
     {
-        $documento = new Documento($request->toArray());
+        $documento = new Documento($request->all());
         $documento->save();
+        $documento->cursos()->sync($request->input('cursos'));
 
         return redirect(action('DocumentoController@index'));
     }
@@ -62,7 +66,9 @@ class DocumentoController extends Controller
      */
     public function edit(Documento $documento)
     {
-        return view('documentos.edit', compact('documento'));
+        $cursos = Curso::all();
+
+        return view('documentos.edit', compact('documento', 'cursos'));
     }
 
     /**
@@ -74,7 +80,8 @@ class DocumentoController extends Controller
      */
     public function update(Request $request, Documento $documento)
     {
-        $documento->fill($request->toArray());
+        $documento->fill($request->all());
+        $documento->cursos()->sync($request->input('cursos'));
         $documento->save();
 
         return redirect(action('DocumentoController@index'));

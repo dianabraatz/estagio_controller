@@ -4,12 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Curso;
 use Illuminate\Http\Request;
+use App\Documento;
 
 class CursoController extends Controller
 {
     /**
      * Create a new controller instance
-     * 
+     *
      * @return void
      */
     public function __construct()
@@ -36,7 +37,9 @@ class CursoController extends Controller
      */
     public function create()
     {
-        return view('cursos.create');
+        $documentos = Documento::all();
+
+        return view('cursos.create', compact('documentos'));
     }
 
     /**
@@ -47,8 +50,9 @@ class CursoController extends Controller
      */
     public function store(Request $request)
     {
-        $curso = new Curso($request->toArray());
+        $curso = new Curso($request->all());
         $curso->save();
+        $curso->documentos()->sync($request->input('documentos'));
 
         return redirect(action('CursoController@index'));
     }
@@ -72,7 +76,9 @@ class CursoController extends Controller
      */
     public function edit(Curso $curso)
     {
-        return view('cursos.edit', compact('curso'));
+        $documentos = Documento::all();
+
+        return view('cursos.edit', compact('curso', 'documentos'));
     }
 
     /**
@@ -84,7 +90,8 @@ class CursoController extends Controller
      */
     public function update(Request $request, Curso $curso)
     {
-        $curso->fill($request->toArray());
+        $curso->fill($request->all());
+        $curso->documentos()->sync($request->input('documentos'));
         $curso->save();
 
         return redirect(action('CursoController@index'));
