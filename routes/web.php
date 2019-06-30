@@ -23,3 +23,4 @@ Route::resource('cursos', 'CursoController');
 Route::resource('alunos', 'AlunoController');
 Route::resource('empresas', 'EmpresaController');
 Route::resource('professores', 'ProfessorController', ['parameters' => ['professores' => 'professor']]);
+Route::resource('documentos', 'DocumentoController');

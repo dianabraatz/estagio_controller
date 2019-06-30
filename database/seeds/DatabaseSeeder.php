@@ -16,7 +16,8 @@ class DatabaseSeeder extends Seeder
             CursosTableSeeder::class,
             AlunosTableSeeder::class,
             ProfessoresTableSeeder::class,
-            EmpresasTableSeeder::class
+            EmpresasTableSeeder::class,
+            DocumentosTableSeeder::class
         ]);
     }
 }
