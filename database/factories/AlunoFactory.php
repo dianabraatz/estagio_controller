@@ -11,7 +11,7 @@ $factory->define(Aluno::class, function (Faker $faker) {
 
     return [
         'nome' => $faker->name(),
-        'matricula' => $faker->randomNumber(7),
+        'matricula' => $faker->unique()->numerify('#######'),
         'curso_id' => $cursos->random()->id
     ];
 });
