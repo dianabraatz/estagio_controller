@@ -34,6 +34,19 @@
         {{ __('Updated at') }}: {{ $aluno->updated_at }}
     </p>
 
+    <p>
+        Estágios:
+        <ul class="list-group">
+            @foreach($aluno->estagios as $estagio)
+            <li class="list-group-item">
+                <a href="{{ action('EstagioController@show', ['id' => $estagio->id]) }}">
+                    {{ $estagio->display() }}
+                </a>
+            </li>
+            @endforeach
+        </ul>
+    </p>
+
     <hr />
 
     <p>

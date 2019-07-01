@@ -40,6 +40,7 @@
                         <a class="nav-link" href="{{ action('EmpresaController@index') }}">Empresas</a>
                         <a class="nav-link" href="{{ action('ProfessorController@index') }}">Professores</a>
                         <a class="nav-link" href="{{ action('DocumentoController@index') }}">Documentos</a>
+                        <a class="nav-link" href="{{ action('EstagioController@index') }}">Estágios</a>
                     </ul>
                     @endauth
 

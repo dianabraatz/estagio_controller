@@ -11,4 +11,9 @@ class Empresa extends Model
         'razao_social',
         'cnpj'
     ];
+
+    public function estagios()
+    {
+        return $this->hasMany(Estagio::class);
+    }
 }

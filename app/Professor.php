@@ -11,4 +11,9 @@ class Professor extends Model
     protected $fillable = [
         'nome'
     ];
+
+    public function estagios()
+    {
+        return $this->hasMany(Estagio::class);
+    }
 }

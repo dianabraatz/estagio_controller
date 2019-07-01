@@ -12,6 +12,11 @@ class Aluno extends Model
 
     public function curso()
     {
-        return $this->belongsTo(\App\Curso::class);
+        return $this->belongsTo(Curso::class);
+    }
+
+    public function estagios()
+    {
+        return $this->hasMany(Estagio::class);
     }
 }
