@@ -22,7 +22,6 @@
             <label for="selectCursos">Cursos</label>
             <select multiple
                     id="selectCursos"
-                    type="text"
                     name="cursos[]"
                     class="form-control">
                 @foreach($cursos as $curso)
