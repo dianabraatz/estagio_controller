@@ -4,6 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @property Curso $curso
+ * @property \Illuminta\Database\Eloquent\Collection $estagios
+ */
 class Aluno extends Model
 {
     protected $fillable = [

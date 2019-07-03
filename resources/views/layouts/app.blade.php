@@ -41,6 +41,7 @@
                         <a class="nav-link" href="{{ action('ProfessorController@index') }}">Professores</a>
                         <a class="nav-link" href="{{ action('DocumentoController@index') }}">Documentos</a>
                         <a class="nav-link" href="{{ action('EstagioController@index') }}">Estágios</a>
+                        <a class="nav-link" href="{{ action('ChecklistController@index') }}">Checklist</a>
                     </ul>
                     @endauth
 

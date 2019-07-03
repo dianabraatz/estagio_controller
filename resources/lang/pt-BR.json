@@ -14,5 +14,6 @@
     "Created at": "Criado em",
     "Updated at": "Atualizado em",
     ":aluno at :empresa (from :data_inicio to :data_termino)": ":aluno em :empresa (de :data_inicio até :data_termino)",
-    "this date": "a data atual"
+    "this date": "a data atual",
+    "Filter": "Filtrar"
 }

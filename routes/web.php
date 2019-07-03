@@ -25,3 +25,5 @@ Route::resource('empresas', 'EmpresaController');
 Route::resource('professores', 'ProfessorController', ['parameters' => ['professores' => 'professor']]);
 Route::resource('documentos', 'DocumentoController');
 Route::resource('estagios', 'EstagioController');
+Route::get('/checklist', 'ChecklistController@index');
+Route::post('/checklist', 'ChecklistController@store');

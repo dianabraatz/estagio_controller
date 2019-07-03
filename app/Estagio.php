@@ -4,6 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @property \Illuminate\Database\Eloquent\Collection $curso_documento
+ */
 class Estagio extends Model
 {
     protected $fillable = [
@@ -27,6 +30,15 @@ class Estagio extends Model
     public function professor()
     {
         return $this->belongsTo(Professor::class);
+    }
+
+    public function curso_documento()
+    {
+        return $this->belongsToMany(
+            CursoDocumento::class,
+            'curso_documento_estagio',
+            'estagio_id', 'curso_documento_id'
+        );
     }
 
     public function display()
