@@ -3,9 +3,18 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Relations\Pivot;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 class CursoDocumento extends Pivot
 {
-    use SoftDeletes;
+    public $incrementing = true;
+
+    public function curso()
+    {
+        return $this->belongsTo(Curso::class);
+    }
+
+    public function documento()
+    {
+        return $this->belongsTo(Documento::class);
+    }
 }

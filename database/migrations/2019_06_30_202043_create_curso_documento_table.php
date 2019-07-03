@@ -14,12 +14,11 @@ class CreateCursoDocumentoTable extends Migration
     public function up()
     {
         Schema::create('curso_documento', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->unsignedBigInteger('curso_id');
             $table->unsignedBigInteger('documento_id');
-            $table->timestamps();
-            $table->softDeletes();
-            
-            $table->primary(['curso_id', 'documento_id']);
+
+            $table->unique(['curso_id', 'documento_id']);
 
             $table->foreign('curso_id')
                   ->references('id')
